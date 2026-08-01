@@ -1,0 +1,433 @@
+/*==================================================
+                IMPORTACIÓN
+==================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/*==================================================
+                VARIABLES
+==================================================*/
+
+:root{
+
+    --bg:#050816;
+    --bg2:#0b1224;
+    --card:#111a33;
+    --primary:#00c8ff;
+    --primary2:#33d9ff;
+    --text:#ffffff;
+    --text2:#a7b4d6;
+    --border:rgba(0,200,255,.18);
+
+    --shadow:
+    0 15px 40px rgba(0,0,0,.45);
+
+}
+
+/*==================================================
+                BODY
+==================================================*/
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+/*==================================================
+                HEADER
+==================================================*/
+
+.project-header{
+
+    width:100%;
+    padding:30px 8%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+
+    display:flex;
+    align-items:center;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(5,8,22,.45);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.back-btn{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    transition:.4s;
+
+    font-size:17px;
+
+}
+
+.back-btn i{
+
+    font-size:22px;
+
+}
+
+.back-btn:hover{
+
+    color:var(--primary);
+
+}
+
+/*==================================================
+                COVER
+==================================================*/
+
+.cover{
+
+    width:100%;
+    height:85vh;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.cover img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1.2s;
+
+}
+
+.cover:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.cover::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+
+        rgba(0,0,0,.15),
+
+        rgba(5,8,22,.9)
+
+    );
+
+}
+
+/*==================================================
+                HERO
+==================================================*/
+
+.project-hero{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:90px auto 70px;
+
+    text-align:center;
+
+}
+
+.project-number{
+
+    display:inline-block;
+
+    padding:10px 25px;
+
+    border-radius:30px;
+
+    border:1px solid var(--border);
+
+    color:var(--primary);
+
+    letter-spacing:4px;
+
+    margin-bottom:30px;
+
+    background:rgba(0,200,255,.05);
+
+}
+
+.project-hero h1{
+
+    font-size:65px;
+
+    margin-bottom:25px;
+
+}
+
+.project-hero p{
+
+    max-width:900px;
+
+    margin:auto;
+
+    color:var(--text2);
+
+    line-height:1.8;
+
+    font-size:18px;
+
+}
+
+/*==================================================
+                GALERÍA
+==================================================*/
+
+.gallery{
+
+    width:90%;
+    max-width:1500px;
+
+    margin:70px auto 120px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:28px;
+
+}
+
+/*==================================================
+                TARJETAS
+==================================================*/
+
+.gallery img{
+
+    width:100%;
+    height:330px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+
+    transition:.45s;
+
+    box-shadow:var(--shadow);
+
+}
+
+/*==================================================
+                HOVER
+==================================================*/
+
+.gallery img:hover{
+
+    transform:
+
+    translateY(-12px)
+
+    scale(1.03);
+
+    border-color:var(--primary);
+
+    box-shadow:
+
+    0 0 25px rgba(0,200,255,.30),
+
+    0 25px 60px rgba(0,0,0,.45);
+
+}
+
+/*==================================================
+            TAMAÑOS DIFERENTES
+==================================================*/
+
+.gallery img:nth-child(2){
+
+    height:430px;
+
+}
+
+.gallery img:nth-child(5){
+
+    height:420px;
+
+}
+
+.gallery img:nth-child(8){
+
+    height:470px;
+
+}
+
+/*==================================================
+                ANIMACIÓN
+==================================================*/
+
+.gallery img{
+
+    opacity:0;
+
+    animation:fadeUp .8s forwards;
+
+}
+
+.gallery img:nth-child(1){animation-delay:.1s;}
+.gallery img:nth-child(2){animation-delay:.2s;}
+.gallery img:nth-child(3){animation-delay:.3s;}
+.gallery img:nth-child(4){animation-delay:.4s;}
+.gallery img:nth-child(5){animation-delay:.5s;}
+.gallery img:nth-child(6){animation-delay:.6s;}
+.gallery img:nth-child(7){animation-delay:.7s;}
+.gallery img:nth-child(8){animation-delay:.8s;}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==================================================
+            SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#09111f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary2);
+
+}
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:992px){
+
+.project-hero h1{
+
+font-size:48px;
+
+}
+
+.gallery{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.cover{
+
+height:45vh;
+
+}
+
+.project-hero{
+
+margin-top:60px;
+
+}
+
+.project-hero h1{
+
+font-size:36px;
+
+}
+
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+.gallery img,
+.gallery img:nth-child(2),
+.gallery img:nth-child(5),
+.gallery img:nth-child(8){
+
+height:280px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.project-header{
+
+padding:20px 6%;
+
+}
+
+.project-hero h1{
+
+font-size:30px;
+
+}
+
+.project-hero p{
+
+font-size:16px;
+
+}
+
+}
